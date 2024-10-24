@@ -29,17 +29,10 @@ function App() {
         setCurrentCarIndex((prevIndex) => (prevIndex === cars.length - 1 ? 0 : prevIndex + 1));
     };
 
-    const swipeHandlers = useSwipeable({
-        onSwipedUp: handleSwipeUp,
-        onSwipedDown: handleSwipeDown,
-        preventDefaultTouchmoveEvent: true,
-        trackTouch: true,
-    });
-
     const selectedCar = cars[currentCarIndex];
 
     return (
-        <div className="App" {...swipeHandlers}>
+        <div className="App">
             <div className='absolute right-0 z-10 flex flex-col justify-between h-screen p-10'>
                 <button className='text-2xl hover:scale-110' onClick={handleSwipeUp}><FaArrowUp /></button>
                 <button className='text-2xl hover:scale-110' onClick={handleSwipeDown}><FaArrowDown /></button>
